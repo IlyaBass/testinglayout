@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ферма</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="game">
+		<div class="game__content">
+
+			<ul class="game__nav">
+				<li class="game__nav-item default">
+					<div class="game__nav-icon"></div>
+                    <div class="game__nav-title">Главная</div>
+				</li>
+				<li class="game__nav-item default">
+					<div class="game__nav-icon"><img src="img/Иконки/calendar.png" alt="icon"></div>
+                    <div class="game__nav-title">Задания</div>
+				</li>
+				<li class="game__nav-item default">
+					<div class="game__nav-icon"><img src="img/Иконки/shop.png" alt="icon"></div>
+                    <div class="game__nav-title">Магазин</div>
+				</li>
+				<li class="game__nav-item default">
+					<div class="game__nav-icon"><img src="img/Иконки/awards.png" alt="icon"></div>
+                    <div class="game__nav-title">Награды</div>
+				</li>
+				<li class="game__nav-item default">
+					<div class="game__nav-icon"><img src="img/Иконки/settings.png" alt="icon"></div>
+                    <div class="game__nav-title">Настройки</div>
+				</li>
+			</ul>
+
+			<div class="game__resources">
+				<div class="game__level default">
+					<div class="game__level-star">35</div>
+					<div class="game__resource-number">200/1200</div>
+					<div class="game__level-mark"></div>
+				</div>
+				<div class="game__resource default">
+					<img src="img/Иконки/coin.png" alt="icon" class="game__resource-img coin">
+					<div class="game__resource-number">36 545</div>
+					<div class="game__resource-btn"></div>
+				</div>
+				<div class="game__resource default">
+					<img src="img/Иконки/diamond.png" alt="icon" class="game__resource-img diamond">
+					<div class="game__resource-number">45</div>
+					<div class="game__resource-btn"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="game__dialog invisible">
+			<img src="img/01.06.2022/character.png" class="game__dialog-avatar"></img>
+			<div class="game__dialog-text"><span>Привет! <br>Добро прожаловать в ферму! Загляни в огород. </span></div>
+		</div>
+
+		<div class="game__profile invisible">
+			<div class="plashka big-plashka">
+				<div class="plashka-top">
+					<div class="game__profile-offer plashka-offer">Профиль</div>
+					<div class="plashka-cross"><img src="img/01.06.2022/cross.png" alt="cross"></div>
+				</div>
+				<div class="game__profile-inner inner-plashka">
+					<div class="game__profile-top">
+						<div class="game__profile-avatar"><img src="img/01.06.2022/avatar-profile.png" alt="avatar"></div>
+						<div class="game__profile-characteristics">
+							<div class="game__profile-name-and-level">
+								<div class="game__profile-name">
+									<input type="text" class="game__profile-input">
+									<div class="game__profile-name-btn"></div>
+								</div>
+								<div class="game__profile-img"><img src="img/Иконки/star-no-shadow.png" alt="star"></div>
+								<div class="plashka-bold">35 ур.</div>
+							</div>
+							<div class="game__profile-item">
+								<div class="game__profile-title plashka-regular">Опыт:</div>
+								<div class="game__profile-img profile-small-star"><img src="img/Иконки/star-no-shadow.png" alt="star"></div>
+								<div class="game__profile-number plashka-bold">36 000</div>
+							</div>
+							<div class="game__profile-item">
+								<div class="game__profile-title plashka-regular">Награды:</div>
+								<div class="game__profile-img profile-small-awards"><img src="img/Иконки/awards.png" alt="star"></div>
+								<div class="game__profile-number plashka-bold">10 / 150</div>
+							</div>
+						</div>
+					</div>
+					<div class="game__profile-item">
+						<div class="plashka-regular">Произведено продуктов:</div>
+						<div class="plashka-bold">6 650</div>
+					</div>
+					<div class="game__profile-item">
+						<div class="plashka-regular">Выполненно заданий:</div>
+						<div class="plashka-bold">68</div>
+					</div>
+					<div class="game__rating plashka-bold">Рейтинг:</div>
+					<div class="game__profile-item">
+						<div class="plashka-regular">Опыт:</div>
+						<div class="game__profile-img profile-small-star"><img src="img/Иконки/star-no-shadow.png" alt="star"></div>
+						<div class="plashka-bold">топ-1000</div>
+					</div>
+					<div class="game__profile-item">
+						<div class="plashka-regular">Награды:</div>
+						<div class="game__profile-img profile-small-awards"><img src="img/Иконки/awards.png" alt="star"></div>
+						<div class="plashka-bold">топ-2000</div>
+					</div>
+					<div class="game__profile-btns">
+						<div class="game__profile-btn default">Личные сообщения</div>
+						<div class="game__profile-btn default game__profile-invite">Пригласить друга</div>
+					</div>
+				</div>
+				<div class="game__profile-bottom">
+					<div class="game__profile-bottom-item">В игре: 5ч 23м</div>
+					<div class="game__profile-bottom-item">Последний вход: 25.05.22</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="fertilizer invisible">
+			<div class="plashka bottom__plashka">
+				<div class="plashka-top">
+					<div class="fertilizer__offer plashka-offer">Удобрение</div>
+					<div class="plashka-cross"><img src="img/01.06.2022/cross.png" alt="cross"></div>
+				</div>
+				<div class="inner-plashka">
+					<div class="fertilizer__items plashka-items">
+						<div class="fertilizer__item plant-item">
+							<img src="img/01.06.2022/fertilizer-1.svg" alt="fertilizer" class="fertilizer__img">
+							<div class="fertilizer__time">30 м</div>
+							<div class="plashka__cost default">56</div>
+						</div>
+						<div class="fertilizer__item plant-item">
+							<img src="img/01.06.2022/fertilizer-2.svg" alt="fertilizer" class="fertilizer__img">
+							<div class="fertilizer__time">1 ч</div>
+							<div class="plashka__cost default">56</div>
+						</div>
+						<div class="fertilizer__item locked"></div>
+						<div class="fertilizer__item locked"></div>
+						<div class="fertilizer__item locked"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="seeds invisible">
+			<div class="plashka bottom__plashka">
+				<div class="plashka-top">
+					<div class="seeds__offer plashka-offer">Семена</div>
+					<div class="plashka-cross"><img src="img/01.06.2022/cross.png" alt="cross"></div>
+				</div>
+				<div class="inner-plashka">
+					<div class="seeds__items plashka-items">
+
+						<div class="seeds__item plant-item">
+							<div class="seeds__img">
+								<img src="img/01.06.2022/seeds-1.png" alt="seeds">
+							</div>
+							<div class="seeds__title">Пшеница</div>
+							<div class="seeds__barn">В амбаре: 5</div>
+							<div class="seeds__time">10 м</div>
+							<div class="plashka__cost default">56</div>
+						</div>
+
+						<div class="seeds__item plant-item">
+							<div class="seeds__img">
+								<img src="img/01.06.2022/seeds-2.png" alt="seeds">
+							</div>
+							<div class="seeds__title">Морковь</div>
+							<div class="seeds__barn">В амбаре: 0</div>
+							<div class="seeds__time">30 м</div>
+							<div class="plashka__cost default">56</div>
+						</div>
+
+						<div class="seeds__item plant-item">
+							<div class="seeds__img">
+								<img src="img/01.06.2022/seeds-3.png" alt="seeds">
+							</div>
+							<div class="seeds__title">Картошка</div>
+							<div class="seeds__barn">В амбаре: 0</div>
+							<div class="seeds__time">40 м</div>
+							<div class="plashka__cost default">56</div>
+						</div>
+
+						<div class="seeds__item plant-item">
+							<div class="seeds__img">
+								<img src="img/01.06.2022/seeds-4.png" alt="seeds">
+							</div>
+							<div class="seeds__title">Горох</div>
+							<div class="seeds__barn">В амбаре: 0</div>
+							<div class="seeds__time">1ч 10м</div>
+							<div class="plashka__cost default">56</div>
+						</div>
+
+						<div class="seeds__item locked"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="barn invisible">
+			<div class="plashka bottom__plashka">
+				<div class="plashka-top">
+					<div class="barn__offer plashka-offer">Амбар</div>
+					<div class="plashka-cross"><img src="img/01.06.2022/cross.png" alt="cross"></div>
+				</div>
+				<div class="barn__occupancy">
+					<div class="barn__occupancy-title">Заполненность: 523 / 600</div>
+					<div class="occupancy-btn"></div>
+				</div>
+				<div class="plashka-tabs">
+					<div class="plashka-tab active"><span>Все</span></div>
+					<div class="plashka-tab"><img src="img/Иконки/barn-1.svg"></div>
+					<div class="plashka-tab"><img src="img/Иконки/barn-2.svg"></div>
+					<div class="plashka-tab"><img src="img/Иконки/barn-3.svg"></div>
+					<div class="plashka-tab"><img src="img/Иконки/barn-4.svg"></div>
+					<div class="plashka-tab"><img src="img/Иконки/barn-5.svg"></div>
+				</div>
+				<div class="inner-plashka">
+					<div class="barn__items plashka-items">
+						<div class="barn__item">
+							<div class="barn__item-img"><img src="img/01.06.2022/seeds-1.png" alt="barn"></div>
+							<div class="barn__item-title">103</div>
+						</div>
+						<div class="barn__item">
+							<div class="barn__item-img"><img src="img/01.06.2022/seeds-7.png" alt="barn"></div>
+							<div class="barn__item-title">19</div>
+						</div>
+						<div class="barn__item">
+							<div class="barn__item-img"><img src="img/01.06.2022/seeds-2.png" alt="barn"></div>
+							<div class="barn__item-title">20</div>
+						</div>
+						<div class="barn__item">
+							<div class="barn__item-img"><img src="img/01.06.2022/seeds-3.png" alt="barn"></div>
+							<div class="barn__item-title">10</div>
+						</div>
+						<div class="barn__item">
+							<div class="barn__item-img"><img src="img/01.06.2022/seeds-4.png" alt="barn"></div>
+							<div class="barn__item-title">5</div>
+						</div>
+						<div class="barn__item">
+							<div class="barn__item-img"><img src="img/01.06.2022/seeds-5.png" alt="barn"></div>
+							<div class="barn__item-title">15</div>
+						</div>
+						<div class="barn__item">
+							<div class="barn__item-img"><img src="img/01.06.2022/seeds-6.png" alt="barn"></div>
+							<div class="barn__item-title">30</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="birds invisible">
+			<div class="plashka bottom__plashka">
+				<div class="plashka-top">
+					<div class="birds__offer plashka-offer">Птицы</div>
+					<div class="birds__btn occupancy-btn"></div>
+					<div class="plashka-cross"><img src="img/01.06.2022/cross.png" alt="cross"></div>
+				</div>
+				<div class="plashka-tabs">
+					<div class="plashka-tab active"><span>Все</span></div>
+					<div class="plashka-tab"><span>Курицы</span></div>
+					<div class="plashka-tab"><span>Утки</span></div>
+					<div class="plashka-tab"><span>Гуси</span></div>
+				</div>
+				<div class="inner-plashka">
+					<div class="birds__items plashka-items">
+
+						<div class="birds__item animal-item">
+							<div class="birds__card animal__card">
+								<div class="birds__card-inner animal__card-inner">
+									<div class="animal-level default">1 ур.<div class="animal-level-btn"></div></div>
+									<img src="img/01.06.2022/chicken-1.png" class="birds__img">
+								</div>
+								<div class="plashka-slaughter-btn"></div>
+								<div class="birds__action action">
+									<img src="img/01.06.2022/eggs.png" class="birds__action-img action-img">
+									<div class="birds__action-text action-text">Напоить</div>
+								</div>
+							</div>
+							<div class="animal__under">
+								<div class="animal__number">19</div>
+								<div class="animal__under-btn"></div>
+							</div>
+						</div>
+
+						<div class="birds__item animal-item">
+							<div class="birds__card animal__card">
+								<div class="birds__card-inner animal__card-inner">
+									<div class="animal-level default">2 ур.<div class="animal-level-btn"></div></div>
+									<img src="img/01.06.2022/chicken-2.png" class="birds__img">
+								</div>
+								<div class="plashka-slaughter-btn"></div>
+								<div class="birds__action action">
+									<img src="img/01.06.2022/water.png" class="birds__action-img action-img">
+									<div class="birds__action-text action-text">Напоить</div>
+								</div>
+							</div>
+							<div class="animal__under">
+								<div class="animal__number">5</div>
+								<div class="animal__under-btn"></div>
+							</div>
+						</div>
+
+						<div class="birds__item animal-item">
+							<div class="birds__card animal__card">
+								<div class="birds__card-inner animal__card-inner">
+									<div class="animal-level default">3 ур.<div class="animal-level-btn"></div></div>
+									<img src="img/01.06.2022/chicken-3.png" class="birds__img">
+								</div>
+								<div class="plashka-slaughter-btn"></div>
+								<div class="birds__action action">
+									<img src="img/01.06.2022/feed.png" class="birds__action-img action-img">
+									<div class="birds__action-text action-text">Напоить</div>
+								</div>
+							</div>
+							<div class="animal__under">
+								<div class="animal__number">46</div>
+								<div class="animal__under-btn"></div>
+							</div>
+						</div>
+
+						<div class="birds__item animal-item">
+							<div class="birds__card animal__card">
+								<div class="birds__card-inner animal__card-inner">
+									<div class="animal-level default">4 ур.<div class="animal-level-btn"></div></div>
+									<img src="img/01.06.2022/chicken-4.png" class="birds__img">
+								</div>
+								<div class="plashka-slaughter-btn"></div>
+								<div class="birds__action action">
+									<img src="img/01.06.2022/eggs.png" class="birds__action-img action-img">
+									<div class="birds__action-text action-text">Напоить</div>
+								</div>
+							</div>
+							<div class="animal__under">
+								<div class="animal__number">8</div>
+								<div class="animal__under-btn"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="animal ">
+			<div class="plashka bottom__plashka">
+				<div class="plashka-top">
+					<div class="animal__offer plashka-offer">Птицы</div>
+					<div class="animal__btn occupancy-btn"></div>
+					<div class="plashka-cross"><img src="img/01.06.2022/cross.png" alt="cross"></div>
+				</div>
+				<div class="plashka-tabs">
+					<div class="plashka-tab active"><span>Все</span></div>
+					<div class="plashka-tab"><span>Коровы</span></div>
+					<div class="plashka-tab"><span>Свиньи</span></div>
+				</div>
+				<div class="inner-plashka">
+					<div class="animal__items plashka-items">
+						
+						<div class="animal__item animal-item">
+							<div class="animal__card">
+								<div class="animal__card-inner">
+									<div class="animal-level default">1 ур.<div class="animal-level-btn"></div></div>
+									<img src="img/01.06.2022/cow-1.png" class="animal__img">
+								</div>
+								<div class="plashka-slaughter-btn"></div>
+								<div class="animal__action action">
+									<img src="img/01.06.2022/milk.png" class="action-img">
+									<div class="birds__action-text action-text">Напоить</div>
+								</div>
+							</div>
+							<div class="animal__under">
+								<div class="animal__number">13</div>
+								<div class="animal__under-btn"></div>
+							</div>
+						</div>
+
+						<div class="animal__item animal-item">
+							<div class="animal__card">
+								<div class="animal__card-inner">
+									<div class="animal-level default">2 ур.<div class="animal-level-btn"></div></div>
+									<img src="img/01.06.2022/cow-2.png" class="animal__img">
+								</div>
+								<div class="plashka-slaughter-btn"></div>
+								<div class="animal__action action">
+									<img src="img/01.06.2022/water.png" class="action-img">
+									<div class="birds__action-text action-text">Напоить</div>
+								</div>
+							</div>
+							<div class="animal__under">
+								<div class="animal__number">5</div>
+								<div class="animal__under-btn"></div>
+							</div>
+						</div>
+
+						<div class="animal__item animal-item">
+							<div class="animal__card">
+								<div class="animal__card-inner">
+									<div class="animal-level default">3 ур.<div class="animal-level-btn"></div></div>
+									<img src="img/01.06.2022/cow-3.png" class="animal__img">
+								</div>
+								<div class="plashka-slaughter-btn"></div>
+								<div class="animal__action action">
+									<img src="img/01.06.2022/feed.png" class="action-img">
+									<div class="birds__action-text action-text">Напоить</div>
+								</div>
+							</div>
+							<div class="animal__under">
+								<div class="animal__number">46</div>
+								<div class="animal__under-btn"></div>
+							</div>
+						</div>
+
+						<div class="animal__item animal-item">
+							<div class="animal__card">
+								<div class="animal__card-inner">
+									<div class="animal-level default">4 ур.<div class="animal-level-btn"></div></div>
+									<img src="img/01.06.2022/cow-4.png" class="animal__img">
+								</div>
+								<div class="plashka-slaughter-btn"></div>
+								<div class="animal__action action">
+									<img src="img/01.06.2022/feed.png" class="action-img">
+									<div class="birds__action-text action-text">Напоить</div>
+								</div>
+							</div>
+							<div class="animal__under">
+								<div class="animal__number">8</div>
+								<div class="animal__under-btn"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+
+	<script src="js/script.js"></script>
+</body>
+</html>
