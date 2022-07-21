@@ -3,6 +3,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	text-decoration: none;
 }
 
 body {
@@ -19,9 +20,11 @@ body {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-repeat: repeat;
+	background-size: 175%;
+	background-position: center;
 	color: white;
+	overflow: hidden;
 }
 
 .game__content {
@@ -31,7 +34,7 @@ body {
 	align-items: flex-start;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__content {
 		padding: 40px;
 	}	
@@ -47,9 +50,9 @@ body {
 	width: 310px;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__nav {
-		width: 255px;
+		width: 205px;
 	}
 }
 
@@ -67,11 +70,13 @@ body {
 	cursor: pointer;
 	margin-bottom: 16px;
 	width: 100%;
+	position: relative;
+	z-index: 3;
 }
 
-@media (max-width: 925px) {
+@media (max-width: 1440px) {
 	.game__nav-item {
-		margin-bottom: 10px;
+		margin-bottom: 7px;
 	}	
 }
 
@@ -84,10 +89,11 @@ body {
 	border-radius: 20px;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__nav-icon {
-		width: 45px;
-		height: 45px;
+		width: 40px;
+		height: 40px;
+		border-radius: 15px;
 	}
 }
 
@@ -106,7 +112,7 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__nav-icon img {
 		width: 55%;
 	}
@@ -126,7 +132,7 @@ body {
 	font-weight: 900;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__nav-title {
 		font-size: 20px;
 	}	
@@ -146,9 +152,11 @@ body {
 	font-size: 16px;
 	line-height: 22px;
 	width: 330px;
+	position: relative;
+	z-index: 3;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__resources {
 		width: 300px;
 	}
@@ -182,7 +190,7 @@ body {
 	position: relative;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__resource-number {
 		padding: 5px 0;
 	}
@@ -239,7 +247,7 @@ body {
 	z-index: -1;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__level-star::after {
 		width: 77px;
 		height: 77px;
@@ -271,7 +279,7 @@ body {
 	left: -8px;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.coin {
 		width: 38px;
 		top: -7px;
@@ -290,7 +298,7 @@ body {
 	left: -13px;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.diamond {
 		width: 47px;
 		top: -7px;
@@ -320,7 +328,7 @@ body {
 	cursor: pointer;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__resource-btn {
 		width: 33px;
 	}
@@ -343,9 +351,10 @@ body {
 	transform: translateX(-50%);
 	cursor: pointer;
 	bottom: 60px;
+	z-index: 4;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__dialog {
 		bottom: 40px;
 	}
@@ -358,7 +367,7 @@ body {
 	margin-right: 19px;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__dialog-avatar {
 		width: 126px;
 	}
@@ -394,7 +403,7 @@ body {
 	left: -20px;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__dialog-text {
 		font-size: 18px;
 		line-height: 26px;
@@ -409,7 +418,7 @@ body {
 	line-height: 33px;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1440px) {
 	.game__dialog-text span {
 		margin: 20px;
 		font-size: 22px;
@@ -606,6 +615,7 @@ body {
 	line-height: 22px;
 	text-align: center;
 	cursor: pointer;
+	display: block;
 }
 
 .game__profile-btns {
@@ -656,20 +666,19 @@ body {
 }
 
 @media (max-width: 1440px) {
-	.fertilizer, .seeds{
+	.fertilizer, .seeds, .barn, .birds, .animal {
 		left: 50%;
-		transform: scale(0.7) translateX(-71%);
-		bottom: -86.5px;
+		transform: scale(0.6) translateX(-84%);
+	}
+
+	.fertilizer, .seeds{
+		bottom: -115.4px;
 	}
 	.barn {
-		left: 50%;
-		transform: scale(0.7) translateX(-71%);
-		bottom: -106.2px;
+		bottom: -141.5px;
 	}
 	.birds, .animal {
-		left: 50%;
-		transform: scale(0.7) translateX(-71%);
-		bottom: -97.9px;
+		bottom: -130px;
 	}
 }
 
@@ -761,6 +770,7 @@ body {
 	font-weight: 800;
 	font-size: 36px;
 	line-height: 49px;
+	color: #875240;
 }
 
 .birds .plashka-top {
