@@ -7,12 +7,12 @@ let farmBgSize = 100;
 let farmBuildingSize = 0.5;
 
 if (window.matchMedia("(min-width: 1440px)").matches) {
-	farmBuildingSize = 1.1;
+	farmBuildingSize = 0.8;
 	farmBuilding.style.transform = 'translate(-50%, -50%) scale(' + farmBuildingSize + ')';
 }
 
 window.onwheel = function (e) {
-	if (isPopupOpen) {
+	if (isPopupOpen || isAdditionalPopupOpen) {
 		return;
 	}
 	if (e.deltaY < 0) {
@@ -47,13 +47,38 @@ window.onwheel = function (e) {
 // модальные окна
 
 let isPopupOpen = false;
+let isAdditionalPopupOpen = false;
 let popups = [];
+let additionalPopups = [];
 
 popupLogic('.farm__house', '.game__profile', false);
 popupLogic('.farm__barn', '.barn', true);
 popupLogic('.farm__coop', '.birds', true);
 popupLogic('.farm__pigsty', '.animal', true);
 popupLogic('.farm__greenhouse', '.seeds', false);
+
+additionalPopupLogic('.plashka-slaughter-btn', '.slaughter');
+additionalPopupLogic('.animal__under-btn', '.buy');
+additionalPopupLogic('.farm__garden-item', '.speed');
+additionalPopupLogic('.barn__item', '.info');
+
+function additionalPopupLogic(clickedObject, popup) {
+	additionalPopups.push(popup);
+	let popupSelector = document.querySelector(popup);
+	let clickedObjects = document.querySelectorAll(clickedObject);
+	let additionalPopupsHtml = document.querySelectorAll('.additional-plashka');
+	for(let i = 0; i<clickedObjects.length; i++) {
+		clickedObjects[i].onclick = function() {
+			for(let l = 0; l<additionalPopupsHtml.length; l++) {
+				additionalPopupsHtml[l].classList.add('invisible');
+			}
+			popupSelector.classList.remove('invisible');
+			isAdditionalPopupOpen = true;
+			slaughterPlashkaValue = 0;
+			slaughterPlashkaNumber.innerHTML = slaughterPlashkaValue;
+		}
+	}
+}
 
 function popupLogic(clickedObject, popup, isTabed) {
 	popups.push(popup);
@@ -83,13 +108,33 @@ function popupLogic(clickedObject, popup, isTabed) {
 
 // работа крестиков попапов
 let crosses = document.querySelectorAll('.plashka-cross');
+let additionalCrosses = document.querySelectorAll('.additional-plashka-cross');
 
 for(let i = 0; i<crosses.length; i++) {
 	crosses[i].onclick = function() {
+		
 		for(let i = 0; i<popups.length; i++) {
 			document.querySelector(popups[i]).classList.add('invisible');
 		}
 		isPopupOpen = false
+
+		for(let k = 0; k<additionalPopups.length; k++) {
+			document.querySelector(additionalPopups[k]).classList.add('invisible');
+		}
+		isAdditionalPopupOpen = false;
+		slaughterPlashkaValue = 0;
+		slaughterPlashkaNumber.innerHTML = slaughterPlashkaValue;
+	}
+}
+
+for(let i = 0; i<additionalCrosses.length; i++) {
+	additionalCrosses[i].onclick = function() {
+		for(let l = 0; l<additionalPopups.length; l++) {
+			document.querySelector(additionalPopups[l]).classList.add('invisible');
+		}
+		isAdditionalPopupOpen = false
+		slaughterPlashkaValue = 0;
+		slaughterPlashkaNumber.innerHTML = slaughterPlashkaValue;
 	}
 }
 
@@ -115,5 +160,36 @@ for(let p = 0; p<plashkasWithTabs.length; p++) {
 				plashkaItems[i].classList.remove('invisible');
 			}
 		}
+	}
+}
+
+// плашка отдать на убой
+
+let slaughterMinus = document.querySelector('#slaughter-minus');
+let slaughterPlus = document.querySelector('#slaughter-plus');
+let slaughterPlashkaNumber = document.querySelector('.slaughter__inner-number');
+
+let slaughterPlashkaValue = 0;
+slaughterPlashkaNumber.innerHTML = slaughterPlashkaValue;
+
+slaughterMinus.onclick = function() {
+	if (slaughterPlashkaValue > 0) {
+		slaughterPlashkaValue -= 1;
+		slaughterPlashkaNumber.innerHTML = slaughterPlashkaValue;
+	}
+}
+
+slaughterPlus.onclick = function() {
+	slaughterPlashkaValue += 1;
+	slaughterPlashkaNumber.innerHTML = slaughterPlashkaValue;
+}
+
+// расстояние подсказок от левого края
+
+let promptsHover = document.querySelectorAll('.prompt-hover');
+
+for(let i = 0; i<promptsHover.length; i++) {
+	promptsHover[i].onmouseover = function() {
+		this.querySelector('.prompt-text').style.left = this.offsetWidth + 10 + 'px';
 	}
 }
