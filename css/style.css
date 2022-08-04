@@ -74,6 +74,11 @@ body {
 	z-index: 3;
 }
 
+.game__nav-locked {
+	cursor: default;
+	opacity: 0.5;
+}
+
 @media (max-width: 1440px) {
 	.game__nav-item {
 		margin-bottom: 7px;
@@ -151,20 +156,14 @@ body {
 	font-weight: 900;
 	font-size: 16px;
 	line-height: 22px;
-	width: 330px;
+	min-width: 330px;
 	position: relative;
 	z-index: 3;
 }
 
-@media (max-width: 1440px) {
-	.game__resources {
-		width: 300px;
-	}
-}
-
 @media (max-width: 925px) {
 	.game__resources {
-		width: 220px;
+		width: 300px;
 		font-size: 14px;
 	}	
 }
@@ -188,6 +187,7 @@ body {
 	transform: translateX(-50%);
 	z-index: 2;
 	position: relative;
+	white-space: nowrap;
 }
 
 @media (max-width: 1440px) {
@@ -204,21 +204,22 @@ body {
 
 .game__level-star {
 	position: absolute;
-	left: -5px;
-	top: 5px;
+	left: -30px;
+	top: -25px;
 	font-weight: 900;
 	font-size: 20px;
 	line-height: 27px;
     text-shadow: 0 0 2px #C57600;
     z-index: 1;
-}
+    text-align: center;
+    min-width: 25px;
+    min-height: 25px;
+    padding: 35px 26px 26px 26px;
 
-@media (max-width: 925px) {
-	.game__level-star {
-		font-size: 17px;
-		left: -8px;
-		top: 0;
-	}	
+    background-image: url('../img/Иконки/star.png');
+    background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .game__level-mark {
@@ -234,34 +235,19 @@ body {
 	z-index: 0;
 }
 
-.game__level-star::after {
-	content: '';
-	background-image: url('../img/Иконки/star.png');
-	background-size: contain;
-	background-position: center;
-	width: 87px;
-	height: 87px;
-	position: absolute;
-	left: -133%;
-	top: -124%;
-	z-index: -1;
-}
-
 @media (max-width: 1440px) {
-	.game__level-star::after {
-		width: 77px;
-		height: 77px;
-		left: -110%;
-		top: -108%;
+	.game__level-star {
+		left: -30px;
+		top: -30px;
 	}
 }
 
 @media (max-width: 925px) {
-	.game__level-star::after {
-		width: 57px;
-		height: 57px;
-		top: -65%;
-		left: -90%;
+	.game__level-star {
+		font-size: 17px;
+		padding: 25px 16px 16px 16px;
+		top: -25px;
+		left: -20px;
 	}	
 }
 
@@ -492,6 +478,7 @@ body {
 	flex-wrap: wrap;
 	align-items: stretch;
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .game__profile {
@@ -505,9 +492,9 @@ body {
 
 @media (max-width: 1440px) {
 	.game__profile {
-		transform: scale(0.8) translate(-50%, -50%);
-		top: 38%;
-		left: 45%;
+		transform: scale(0.7) translate(-50%, -50%);
+		top: 33%;
+		left: 42%;
 	}
 }
 
@@ -644,6 +631,7 @@ body {
 	font-size: 20px;
 	line-height: 27px;
 	margin: 0 5px;
+	white-space: nowrap;
 }
 
 .plashka-regular {
@@ -668,17 +656,17 @@ body {
 @media (max-width: 1440px) {
 	.fertilizer, .seeds, .barn, .birds, .animal {
 		left: 50%;
-		transform: scale(0.6) translateX(-84%);
+		transform: scale(0.48) translateX(-108%);
 	}
 
 	.fertilizer, .seeds{
-		bottom: -115.4px;
+		bottom: -149.5px;
 	}
 	.barn {
-		bottom: -141.5px;
+		bottom: -184px;
 	}
 	.birds, .animal {
-		bottom: -130px;
+		bottom: -169px;
 	}
 }
 
@@ -706,7 +694,7 @@ body {
 
 .seeds__item {
 	min-height: 262px;
-	width: 17%;
+	width: 17.9%;
 	padding: 5px;
 }
 
@@ -734,6 +722,13 @@ body {
 	margin-bottom: 10px;
 }
 
+@media (max-width: 1440px) {
+	.seeds__barn {
+		font-size: 20px;
+		line-height: 26px;
+	}
+}
+
 .seeds__time {
 	font-weight: 800;
 	font-size: 20px;
@@ -749,6 +744,11 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 20px;
+	position: relative;
+}
+
+.barn .plashka-top {
+	margin-bottom: 0;
 }
 
 .barn__offer {
@@ -763,6 +763,7 @@ body {
 .barn__item-img {
 	width: 94px;
 	height: 95px;
+	margin: 0 auto;
 	margin-bottom: 15px;
 }
 
@@ -783,6 +784,40 @@ body {
 	background-image: url('../img/01.06.2022/animal-bg.png');
 }
 
+.add-animal .animal__card-inner {
+	background-image: none;
+}
+
+.add-animal .animal__card-inner:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	border-radius: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('../img/01.06.2022/animal-bg.png');
+	opacity: 0.5;
+}
+
+.add-animal .birds__card-inner:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	border-radius: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('../img/01.06.2022/birds-bg.png');
+	opacity: 0.5;
+}
+
 .animal__card-inner::after {
 	content: '';
 	position: absolute;
@@ -799,6 +834,28 @@ body {
 	bottom: 5px;
 	left: 50%;
 	transform: translateX(-50%);
+}
+
+.add-animal .animal__img, .add-animal .birds__img {
+	bottom: 50%;
+	transform: translate(-50%, 50%);
+	opacity: 1;
+}
+
+.animal__cost-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 140px;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 33px;
+	padding: 5px 0 2px 0;
+	opacity: 1;
 }
 
 .birds__card-inner {
@@ -831,6 +888,10 @@ body {
 	background-color: #F2D297;
 	border-radius: 20px;
 	position: relative;
+}
+
+.add-animal .animal__card {
+	background-color: rgba(242, 210, 151, 0.5);
 }
 
 .animal__card-inner {
@@ -930,8 +991,39 @@ body {
 	cursor: pointer;
 }
 
-.action-text {
+.prompt-hover:hover .prompt-text{
+	display: block;
+}
+
+.prompt-text {
+	font-weight: 900;
+	font-size: 14px;
+	line-height: 19px;
+	padding: 9px 15px;
+	background: #F2D297;
+	border: 1px solid #875240;
+	border-radius: 100px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 6;
+	white-space: nowrap;
 	display: none;
+	user-select: none;
+	cursor: default;
+	color: #875240;
+}
+
+@media (max-width: 1440px) {
+	.prompt-text {
+		font-size: 19px;
+		line-height: 24px;
+	}
+}
+
+.animal-item:nth-child(4n) .prompt-text {
+	left: auto !important;
+	right: 60px;
 }
 
 .plant-item {
@@ -943,25 +1035,56 @@ body {
 	box-sizing: border-box;
 }
 
+.additional-plashka {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 7;
+	min-width: 253px;
+}
+
+.additional-plashka .plashka-cross{
+	width: 20px;
+	height: 20px;
+	top: 12px;
+	right: 12px;
+	transform: translateY(0);
+}
+
+.additional__offer {
+	margin-bottom: 15px;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 33px;
+	text-align: center;
+}
+
+.additional-plashka .plashka {
+	padding: 30px;
+	border-radius: 20px;
+}
+
 .info {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: 3;
+	z-index: 6;
 	min-width: 600px;
 }
 
 @media (max-width: 1440px) {
 	.info {
-		transform: scale(0.8) translate(-50%, -50%);
+		transform: scale(0.7) translate(-50%, -50%);
 		top: 38%;
-		left: 45%;
+		left: 42%;
 	}
 }
 
 .info__plashka {
 	padding: 30px 15px;
+	border-radius: 50px !important;
 }
 
 .info__offer {
@@ -971,8 +1094,8 @@ body {
 }
 
 .info__cross {
-	width: 30px;
-	height: 30px;
+	width: 30px !important;
+	height: 30px !important;
 }
 
 .info__top {
@@ -1066,28 +1189,6 @@ body {
 	max-height: 32px;
 }
 
-.additional-plashka {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 7;
-	min-width: 253px;
-}
-
-.additional__offer {
-	margin-bottom: 15px;
-	font-weight: 900;
-	font-size: 24px;
-	line-height: 33px;
-	text-align: center;
-}
-
-.additional-plashka .plashka {
-	padding: 30px;
-	border-radius: 20px;
-}
-
 .slaughter__inner {
 	display: flex;
 	align-items: center;
@@ -1096,6 +1197,10 @@ body {
 	font-weight: 900;
 	font-size: 24px;
 	line-height: 33px;
+}
+
+.slaughter__inner-btn {
+	cursor: pointer;
 }
 
 .slaughter .inner-plashka {
@@ -1211,6 +1316,8 @@ body {
 .plashka-tab span {
 	display: block;
 	margin-top: 7px;
+	padding: 0 15px;
+	display: block;
 }
 
 .plashka-tab.active {
@@ -1220,6 +1327,7 @@ body {
 }
 
 .occupancy-btn {
+	position: relative;
 	cursor: pointer;
 	width: 34px;
 	height: 34px;
