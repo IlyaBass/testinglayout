@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
+	user-select: none;
 }
 
 body {
@@ -16,15 +17,22 @@ body {
 }
 
 .game {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	color: white;
+	overflow: hidden;
+}
+
+.game__bg {
 	background-image: url('../img/01.06.2022/Фон.jpg');
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	background-repeat: repeat;
-	background-size: 175%;
+	background-size: 100%;
 	background-position: center;
-	color: white;
-	overflow: hidden;
+	transform: scale(1.3);
 }
 
 .game__content {
@@ -32,6 +40,7 @@ body {
 	justify-content: space-between;
 	padding: 60px;
 	align-items: flex-start;
+	user-select: none;
 }
 
 @media (max-width: 1440px) {
@@ -483,10 +492,11 @@ body {
 
 .game__profile {
 	position: absolute;
-	top: 50%;
-	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 600px;
+	transform: scale(0.8) translate(-50%, -50%);
+	top: 40%;
+	left: 45%;
 	z-index: 2;
 }
 
@@ -494,7 +504,7 @@ body {
 	.game__profile {
 		transform: scale(0.7) translate(-50%, -50%);
 		top: 33%;
-		left: 42%;
+		left: 41%;
 	}
 }
 
@@ -650,7 +660,17 @@ body {
 	z-index: 5;
 	bottom: 0;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: scale(0.6) translateX(-87%);
+}
+
+.fertilizer, .seeds{
+	bottom: -115px;
+}
+.barn {
+	bottom: -133px;
+}
+.birds, .animal {
+	bottom: -130px;
 }
 
 @media (max-width: 1440px) {
@@ -1069,17 +1089,11 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
 	z-index: 6;
 	min-width: 600px;
-}
-
-@media (max-width: 1440px) {
-	.info {
-		transform: scale(0.7) translate(-50%, -50%);
-		top: 38%;
-		left: 42%;
-	}
+	transform: scale(0.7) translate(-50%, -50%);
+	top: 38%;
+	left: 42%;
 }
 
 .info__plashka {
