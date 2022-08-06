@@ -1,48 +1,51 @@
-// приближение и отдаление
-let game = document.querySelector('.game');
-let farmBg = document.querySelector('.farm__bg');
-let farmBuilding = document.querySelector('.farm__building');
-let gameBgSize = 175;
-let farmBgSize = 100;
-let farmBuildingSize = 0.5;
+// панзум
 
-if (window.matchMedia("(min-width: 1440px)").matches) {
-	farmBuildingSize = 0.8;
-	farmBuilding.style.transform = 'translate(-50%, -50%) scale(' + farmBuildingSize + ')';
-}
+const farm = document.getElementById('farm')
 
-window.onwheel = function (e) {
+const panzoom = Panzoom(farm, {
+	maxScale: 2,
+	contain: 'outside',
+	cursor: 'default',
+	noBind: true
+});
+
+panzoom.zoom(1.3, {animate: true})
+setTimeout(() => panzoom.pan(0, 0), 50)
+
+farm.addEventListener('wheel', (e) => {
 	if (isPopupOpen || isAdditionalPopupOpen) {
 		return;
-	}
-	if (e.deltaY < 0) {
-		if (farmBgSize <= 155) {
-			if (window.matchMedia("(min-width: 1440px)").matches) {
-				farmBuildingSize += 0.08;
-			} else {
-				farmBuildingSize += 0.04;
-			}
-			gameBgSize += 8;
-			farmBgSize += 8;
-			farmBuilding.style.transform = 'translate(-50%, -50%) scale(' + farmBuildingSize + ')';
-			game.style.backgroundSize = gameBgSize + '%';
-			farmBg.style.backgroundSize = farmBgSize + '%';
-		}
 	} else {
-		if (farmBgSize >= 50) {
-			if (window.matchMedia("(min-width: 1440px)").matches) {
-				farmBuildingSize -= 0.08;
-			} else {
-				farmBuildingSize -= 0.04;
-			}
-			gameBgSize -= 8;
-			farmBgSize -= 8;
-			farmBuilding.style.transform = 'translate(-50%, -50%) scale(' + farmBuildingSize + ')';
-			game.style.backgroundSize = gameBgSize + '%';
-			farmBg.style.backgroundSize = farmBgSize + '%';
-		}
+		panzoom.zoomWithWheel(e)
 	}
-}
+})
+
+let isMoved = false
+
+document.addEventListener('pointerdown', (e) => {
+	if (isPopupOpen || isAdditionalPopupOpen) {
+		return;
+	} else {
+		panzoom.handleDown(e)
+		isMoved = true
+	}
+})
+document.addEventListener('pointermove', (e) => {
+	if (isPopupOpen || isAdditionalPopupOpen) {
+		return;
+	} else {
+		panzoom.handleMove(e)
+		isMoved = true
+	}
+})
+document.addEventListener('pointerup', (e) => {
+	if (isPopupOpen || isAdditionalPopupOpen) {
+		return;
+	} else {
+		panzoom.handleUp(e)
+		isMoved = false
+	}
+})
 
 // модальные окна
 
@@ -69,13 +72,17 @@ function additionalPopupLogic(clickedObject, popup) {
 	let additionalPopupsHtml = document.querySelectorAll('.additional-plashka');
 	for(let i = 0; i<clickedObjects.length; i++) {
 		clickedObjects[i].onclick = function() {
-			for(let l = 0; l<additionalPopupsHtml.length; l++) {
-				additionalPopupsHtml[l].classList.add('invisible');
-			}
-			popupSelector.classList.remove('invisible');
-			isAdditionalPopupOpen = true;
-			slaughterPlashkaValue = 0;
-			slaughterPlashkaNumber.innerHTML = slaughterPlashkaValue;
+			setTimeout(function() {
+				if (!isMoved) {
+					for(let l = 0; l<additionalPopupsHtml.length; l++) {
+						additionalPopupsHtml[l].classList.add('invisible');
+					}
+					popupSelector.classList.remove('invisible');
+					isAdditionalPopupOpen = true;
+					slaughterPlashkaValue = 0;
+					slaughterPlashkaNumber.innerHTML = slaughterPlashkaValue;
+				}
+			}, 50)
 		}
 	}
 }
@@ -86,23 +93,25 @@ function popupLogic(clickedObject, popup, isTabed) {
 	let popupSelectorTabs = popupSelector.querySelectorAll('.plashka-tab');
 	let plashkaItems = popupSelector.querySelectorAll('.plashka-items');
 	document.querySelector(clickedObject).onclick = function() {
-		if (!isPopupOpen) {
-			if (isTabed) {
-				for (var i = 0; i < popupSelectorTabs.length; i++) {
-					popupSelectorTabs[i].classList.remove('active');
-				}
-				popupSelectorTabs[0].classList.add('active');
-				for(let i = 0; i < plashkaItems.length; i++) {
-					if (i == 0) {
-						plashkaItems[i].classList.remove('invisible');
-					} else {
-						plashkaItems[i].classList.add('invisible');
+		setTimeout(function() {
+			if (!isPopupOpen && !isMoved) {
+				if (isTabed) {
+					for (var i = 0; i < popupSelectorTabs.length; i++) {
+						popupSelectorTabs[i].classList.remove('active');
+					}
+					popupSelectorTabs[0].classList.add('active');
+					for(let i = 0; i < plashkaItems.length; i++) {
+						if (i == 0) {
+							plashkaItems[i].classList.remove('invisible');
+						} else {
+							plashkaItems[i].classList.add('invisible');
+						}
 					}
 				}
+				popupSelector.classList.remove('invisible');
+				isPopupOpen = true;
 			}
-			popupSelector.classList.remove('invisible');
-			isPopupOpen = true;
-		}
+		}, 50)
 	}
 }
 
