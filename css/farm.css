@@ -68,8 +68,8 @@ body {
 	position: absolute;
 	width: 328px;
 	height: 211px;
-	top: 0px;
-	left: 15px;
+	top: 40px;
+	left: 45px;
 }
 
 .farm__garden-items {
@@ -85,8 +85,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	width: 158px;
-	height: 158px;
+	width: 108px;
+	height: 80px;
 }
 
 .farm__garden-item:nth-child(1) {
@@ -145,10 +145,12 @@ body {
 
 .garden-empty {
 	background-image: url('../img/Здания/Огород/Огород плитка невспаханное поле.png');
+	transform: scale(1) translate(0px, 0px);
 }
 
 .garden-empty:hover {
 	background-image: url('../img/Здания/Огород/Огород плитка невспаханное поле наведение.png');
+	transform: scale(1.24) translate(0px, 0px);
 }
 
 .garden-plowed {
@@ -157,6 +159,7 @@ body {
 
 .garden-plowed:hover {
 	background-image: url('../img/Здания/Огород/Огород плитка вспаханное поле наведение.png');
+	transform: scale(1.24) translate(0px, 0px);
 }
 
 .garden-landed {
@@ -165,6 +168,7 @@ body {
 
 .garden-landed:hover {
 	background-image: url('../img/Здания/Огород/Огород плитка только высажен урожай наведение.png');
+	transform: scale(1.24) translate(0px, 0px);
 }
 
 .garden-pea-grown {
@@ -173,22 +177,29 @@ body {
 
 .garden-pea-grown:hover {
 	background-image: url('../img/Здания/Огород/Огород плитка горох подрос наведение.png');
+	transform: scale(1.26) translate(0px, 2px);
 }
 
 .garden-pea-ripe {
 	background-image: url('../img/Здания/Огород/Огород плитка горох созрел.png');
+	height: 83px;
+	transform: scale(1) translate(-3px, -6px);
 }
 
 .garden-pea-ripe:hover {
 	background-image: url('../img/Здания/Огород/Огород плитка горох созрел наведение.png');
+	transform: scale(1.26) translate(-2px, 1px);
 }
 
 .garden-potato-grown {
 	background-image: url('../img/Здания/Огород/Огород плитка картофель подрос.png');
+	height: 90px;
+	transform: scale(1) translate(-2px, -16px);
 }
 
 .garden-potato-grown:hover {
 	background-image: url('../img/Здания/Огород/Огород плитка картофель подрос наведение.png');
+	transform: scale(1.21) translate(0px, -8px);
 }
 
 .garden-potato-ripe {
@@ -197,22 +208,28 @@ body {
 
 .garden-potato-ripe:hover {
 	background-image: url('../img/Здания/Огород/Огород плитка картофель созрел наведение.png');
+	transform: scale(1.26) translate(0px, 0px);
 }
 
 .garden-wheat-grown {
 	background-image: url('../img/Здания/Огород/Огород плитка пшеница подросла.png');
+	transform: scale(1) translate(-1px, 0px);
 }
 
 .garden-wheat-grown:hover {
 	background-image: url('../img/Здания/Огород/Огород плитка пшеница подросла наведение.png');
+	transform: scale(1.26) translate(-1px, 0px);
 }
 
 .garden-wheat-ripe {
 	background-image: url('../img/Здания/Огород/Огород плитка пшеница созрела.png');
+	height: 90px;
+	transform: scale(1) translate(-2px, -16px);
 }
 
 .garden-wheat-ripe:hover {
 	background-image: url('../img/Здания/Огород/Огород плитка пшеница созрела наведение.png');
+	transform: scale(1.21) translate(-1.5px, -7.5px);
 }
 
 .farm__garden-fertilizer, .farm__garden-water, .farm__garden-dig {
@@ -224,36 +241,38 @@ body {
 
 .farm__barn {
 	position: absolute;
-	background-image: url('../img/01.06.2022/Амбар.png');
+	background-image: url('../img/Здания/Амбар.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	width: 462px;
-	height: 468px;
-	top: -70px;
-	left: 430px;
+	width: 292px;
+	height: 298px;
+	top: -5px;
+	left: 470px;
 	cursor: pointer;
 }
 
 .farm__barn:hover {
-	background-image: url('../img/01.06.2022/Амбар наведение.png');
+	background-image: url('../img/Здания/Амбар наведение.png');
+	transform: scale(1.24) translate(-4px, -1px);
 }
 
 .farm__house {
 	position: absolute;
-	background-image: url('../img/01.06.2022/Дом фермера.png');
+	background-image: url('../img/Здания/Дом фермера.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	width: 540px;
-	height: 528px;
-	top: -110px;
-	right: 10px;
+	width: 340px;
+	height: 328px;
+	top: -10px;
+	right: 90px;
 	cursor: pointer;
 }
 
 .farm__house:hover {
-	background-image: url('../img/01.06.2022/Дом фермера наведение.png');
+	background-image: url('../img/Здания/Дом фермера наведение.png');
+	transform: scale(1.25) translate(-1px, 0px);
 }
 
 .farm__greenhouse {
@@ -261,11 +280,15 @@ body {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	width: 337px;
-	height: 337px;
-	top: 150px;
-	left: -50px;
+	width: 227px;
+	height: 177px;
+	top: 235px;
+	left: 5px;
 	cursor: pointer;
+}
+
+.farm__greenhouse:hover {
+	transform: scale(1.25) translate(-3px, -3px);
 }
 
 .greenhouse-empty {
@@ -310,51 +333,54 @@ body {
 
 .farm__coop {
 	position: absolute;
-	background-image: url('../img/01.06.2022/Курятник.png');
+	background-image: url('../img/Здания/Курятник.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	width: 316px;
-	height: 312px;
-	bottom: -10px;
-	left: 65px;
+	width: 216px;
+	height: 212px;
+	bottom: 33px;
+	left: 127px;
 	cursor: pointer;
 }
 
 .farm__coop:hover {
-	background-image: url('../img/01.06.2022/Курятник наведение.png');
+	background-image: url('../img/Здания/Курятник наведение.png');
+	transform: scale(1.2) translate(-3px, -1px);
 }
 
 .farm__pigsty {
 	position: absolute;
-	background-image: url('../img/01.06.2022/Свинарник.png');
+	background-image: url('../img/Здания/Свинарник.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	width: 632px;
-	height: 541px;
-	bottom: -80px;
-	right: 400px;
+	width: 382px;
+	height: 291px;
+	bottom: -7px;
+	right: 480px;
 	cursor: pointer;
 }
 
 .farm__pigsty:hover {
-	background-image: url('../img/01.06.2022/Свинарник наведение.png');
+	background-image: url('../img/Здания/Свинарник наведение.png');
+	transform: scale(1.26) translate(1px, -4px);
 }
 
 .farm__stock {
 	position: absolute;
-	background-image: url('../img/01.06.2022/Склад.png');
+	background-image: url('../img/Здания/Склад.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	width: 366px;
-	height: 362px;
-	bottom: -40px;
-	right: 90px;
+	width: 256px;
+	height: 252px;
+	bottom: 10px;
+	right: 120px;
 	cursor: pointer;
 }
 
 .farm__stock:hover {
-	background-image: url('../img/01.06.2022/Склад наведение.png');
+	background-image: url('../img/Здания/Склад наведение.png');
+	transform: scale(1.23) translate(-3px, 0px);
 }
